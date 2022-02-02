@@ -1,6 +1,7 @@
 {
   "name": "doodle-rotate-react",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "main": "./dist/useRotate.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -14,6 +15,7 @@
     "react-scripts": "5.0.0",
     "typescript": "^4.5.5"
   },
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "tsc ./src/useRotate.ts -d --outDir ./dist",
