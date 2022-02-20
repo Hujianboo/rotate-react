@@ -41,7 +41,7 @@ const config = {
     commonjs(),
     babel({
       extensions: [...DEFAULT_EXTENSIONS, '.ts', 'tsx'],
-      // babelHelpers: 'bundled',
+      babelHelpers: 'bundled',
       exclude: /node_modules/,
     }),
     url(),

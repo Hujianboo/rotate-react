@@ -38,15 +38,15 @@ module.exports = {
   'plugins': [
     ['@babel/plugin-proposal-class-properties', { 'loose': true }],
     '@babel/plugin-syntax-dynamic-import',
-    [
-      '@babel/plugin-transform-runtime',
-      {
-        corejs: false,
-        helpers: !isDevelopment,
-        regenerator: !isDevelopment,
-        useESModules: !isDevelopment,
-      },
-    ],
+    // [
+    //   '@babel/plugin-transform-runtime',
+    //   {
+    //     corejs: false,
+    //     helpers: !isDevelopment,
+    //     regenerator: !isDevelopment,
+    //     useESModules: !isDevelopment,
+    //   },
+    // ],
   ],
   'env': {
     production: {

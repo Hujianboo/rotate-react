@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.scss';
-import { useCallback, useEffect, useRef } from "react"
-import {useRotate} from '../useRotate'
+import { useCallback, useEffect, useRef } from 'react';
+import { useRotate } from '../useRotate';
 interface RotateWrapType {
   rotateAngle?: number;
 }
-const RotateSvg = ():React.ReactElement => {
+const RotateSvg = (): React.ReactElement => {
   return (
     <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -14,26 +14,24 @@ const RotateSvg = ():React.ReactElement => {
         fillRule="nonzero"
       />
     </svg>
-  )
-}
-export const RotateWrap:React.FC<RotateWrapType> = (props) => {
-  const {rotateAngle,children} = props
-  const {target,handler} = useRotate<HTMLDivElement>({initAngle:rotateAngle})
+  );
+};
+export const RotateWrap: React.FC<RotateWrapType> = (props) => {
+  const { rotateAngle, children } = props;
+  const { target, handler } = useRotate<HTMLDivElement>({ initAngle: rotateAngle });
+
   return (
-    <div 
-      className='rotate-wrap'
+    <div
+      className="rotate-wrap"
       style={{
-        'transform': `rotate(${rotateAngle}deg)`
+        'transform': `rotate(${rotateAngle}deg)`,
       }}
       ref={target}
-      >
-      <div 
-        className='rotate-svg'
-        ref={handler}
-        >
-        <RotateSvg/>
+    >
+      <div className="rotate-svg" ref={handler}>
+        <RotateSvg />
       </div>
       {children}
     </div>
-  )
-}
+  );
+};
