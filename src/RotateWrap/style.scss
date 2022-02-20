@@ -1,0 +1,12 @@
+.rotate-wrap{
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  .rotate-svg{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: grabbing;
+  }
+}
