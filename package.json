@@ -16,7 +16,6 @@
   },
   "scripts": {
     "start": "NODE_ENV=development BABEL_ENV=development styleguidist server --open",
-    "styleguide:build": "NODE_ENV=production BABEL_ENV=production styleguidist build",
     "build": "rimraf dist && NODE_ENV=production BABEL_ENV=production rollup -c",
     "build:watch": "rollup -c -w",
     "test": "jest",

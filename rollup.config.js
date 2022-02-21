@@ -43,6 +43,20 @@ const config = {
       extensions: [...DEFAULT_EXTENSIONS, '.ts', 'tsx'],
       babelHelpers: 'bundled',
       exclude: /node_modules/,
+      'presets': ['@babel/preset-react', '@babel/preset-typescript', ['@babel/preset-env', { 'loose': true }]],
+      'plugins': [['@babel/plugin-proposal-class-properties', { 'loose': true }], '@babel/plugin-syntax-dynamic-import'],
+      'env': {
+        production: {
+          'plugins': [
+            [
+              'babel-plugin-transform-react-remove-prop-types',
+              {
+                removeImport: true,
+              },
+            ],
+          ],
+        },
+      },
     }),
     url(),
     svgr(),
