@@ -1,5 +1,8 @@
-.rotate-wrap{
-  position: relative;
+.shape-wrap{
+  position: absolute;
+  width: 150px;
+  top: 30px;
+  left: 30px;
   display: inline-block;
   user-select: none;
   .rotate-svg{

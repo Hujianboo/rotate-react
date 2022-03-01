@@ -1,3 +1,3 @@
-
-export {useRotate} from './useRotate'
-export { RotateWrap } from './RotateWrap'
+export { useRotate } from './useRotate';
+export { useDraggable } from './useDraggable';
+export { ShapeWrap } from './ShapeWrap';

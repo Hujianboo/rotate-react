@@ -5,12 +5,3 @@ export const getAngle = (vector1: number[], vector2: number[]) => {
 
   return (angle + 360) % 360;
 };
-export const degNormalize = (deg: number) => {
-  if (deg > 180) {
-    deg = deg - 360;
-  } else if (deg < -180) {
-    deg = 360 + deg;
-  }
-
-  return deg;
-};

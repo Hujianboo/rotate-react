@@ -18,8 +18,7 @@
     "start": "NODE_ENV=development BABEL_ENV=development styleguidist server --open",
     "build": "rimraf dist && NODE_ENV=production BABEL_ENV=production rollup -c",
     "build:watch": "rollup -c -w",
-    "test": "jest",
-    "test:coverage": "jest --coverage --forceExit --colors",
+    "test": "./node_modules/.bin/cypress open",
     "lint": "yarn check-types && yarn eslint && yarn stylelint",
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "eslint": "eslint . --ext .js,.jsx,.tsx,.ts",
@@ -29,9 +28,7 @@
     "check-types": "tsc",
     "audit:fix": "npx yarn-audit-fix",
     "prerelease": "yarn lint:fix && yarn test:coverage",
-    "release": "yarn publish",
-    "predeploy": "yarn styleguide:build",
-    "deploy": "gh-pages -d styleguide"
+    "release": "yarn publish"
   },
   "peerDependencies": {
     "react": "^17.x",

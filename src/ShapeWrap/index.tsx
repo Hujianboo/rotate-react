@@ -2,7 +2,8 @@ import React from 'react';
 import './style.scss';
 import { useCallback, useEffect, useRef } from 'react';
 import { useRotate } from '../useRotate';
-interface RotateWrapType {
+import { useDraggable } from '../useDraggable';
+interface ShapeWrapType {
   rotateAngle?: number;
 }
 const RotateSvg = (): React.ReactElement => {
@@ -16,19 +17,16 @@ const RotateSvg = (): React.ReactElement => {
     </svg>
   );
 };
-export const RotateWrap: React.FC<RotateWrapType> = (props) => {
+export const ShapeWrap: React.FC<ShapeWrapType> = (props) => {
+  const shapeRef = useRef(null);
+  const rotateHandler = useRef(null);
   const { rotateAngle, children } = props;
-  const { target, handler } = useRotate<HTMLDivElement>({ initAngle: rotateAngle });
+  useRotate({ initAngle: rotateAngle, ref: shapeRef, handler: rotateHandler });
+  useDraggable({ ref: shapeRef });
 
   return (
-    <div
-      className="rotate-wrap"
-      style={{
-        'transform': `rotate(${rotateAngle}deg)`,
-      }}
-      ref={target}
-    >
-      <div className="rotate-svg" ref={handler}>
+    <div className="shape-wrap" ref={shapeRef}>
+      <div className="rotate-svg" ref={rotateHandler}>
         <RotateSvg />
       </div>
       {children}
